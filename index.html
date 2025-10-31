@@ -142,16 +142,16 @@
   <header class="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white py-12 shadow-lg">
     <div class="max-w-7xl mx-auto text-center px-4">
       <h1 class="text-4xl md:text-6xl font-extrabold mb-3 tracking-tight">✨ Galeria de Templates</h1>
-      <p class="text-indigo-100 text-xl mb-6">16 templates profissionais — modernos, dinâmicos e responsivos</p>
+      <p class="text-indigo-100 text-xl mb-6">20+ templates profissionais — modernos, dinâmicos e responsivos</p>
       
       <!-- Stats -->
       <div class="stats max-w-4xl mx-auto">
         <div class="stat-card">
-          <div class="stat-number">16</div>
+          <div class="stat-number">20+</div>
           <div class="stat-label">Templates</div>
         </div>
         <div class="stat-card">
-          <div class="stat-number">4</div>
+          <div class="stat-number">4+</div>
           <div class="stat-label">Nichos</div>
         </div>
         <div class="stat-card">
@@ -172,19 +172,22 @@
       <div class="flex flex-wrap gap-3 justify-center items-center">
         <span class="text-sm font-semibold text-gray-600 mr-2">Filtrar por:</span>
         <button class="filter-btn active" data-filter="todos">
-          🌟 Todos (16)
+          🌟 Todos (21)
         </button>
         <button class="filter-btn" data-filter="geral">
-          🏢 Geral (10)
+          🏢 Geral (12)
         </button>
         <button class="filter-btn" data-filter="advocacia">
-          ⚖️ Advocacia (2)
+          ⚖️ Advocacia (3)
         </button>
         <button class="filter-btn" data-filter="eventos">
           🎉 Eventos (2)
         </button>
         <button class="filter-btn" data-filter="medico">
           🏥 Médico (2)
+        </button>
+        <button class="filter-btn" data-filter="restaurante">
+          🍽️ Restaurante (2)
         </button>
       </div>
     </div>
@@ -196,7 +199,7 @@
       <!-- Contador de resultados -->
       <div class="mb-8 text-center">
         <p class="text-lg text-gray-600" id="result-count">
-          Exibindo <span class="font-bold text-indigo-600">16</span> templates
+          Exibindo <span class="font-bold text-indigo-600">20</span> templates
         </p>
       </div>
 
@@ -270,6 +273,29 @@
       // MÉDICO (2 templates)
       { id: 15, nome: "Clínica Vida & Saúde", arquivo: "template-medico1.html", json: "dados-medico1.json", nicho: "medico", descricao: "Clínica multiespecializada completa" },
       { id: 16, nome: "Espaço Saúde Integral", arquivo: "template-medico2.html", json: "dados-medico2.json", nicho: "medico", descricao: "Centro médico com telemedicina" },
+
+      //Restaurante
+            { 
+        id: 17,
+        nome: "Sabor & Arte Restaurante",
+        arquivo: "template-restaurante1.html",
+        json: "dados-restaurante1.json",
+        nicho: "restaurante",
+        descricao: "Restaurante elegante com cardápio dinâmico e reservas online"
+      },
+      { 
+        id: 18,
+        nome: "Bistrô Gourmet",
+        arquivo: "template-restaurante2.html",
+        json: "dados-restaurante2.json",
+        nicho: "restaurante",
+        descricao: "Bistrô moderno com sistema de pedidos e eventos especiais"
+      },
+
+      // mais um advogado
+      { id: 19, nome: "Silva & Advogados", arquivo: "template-advogados3.html", json: "dados-advogados3.json", nicho: "advocacia", descricao: "Escritório tradicional com áreas de atuação" },
+      //site institucional multipaginas
+      { id: 20, nome: "Institucional MultiPáginas", arquivo: "./template-institucional/index.html", json: "./template-institucional/config.json", nicho: "geral", descricao: "Site institucional com múltiplas páginas e navegação aprimorada" },
     ];
 
     const grid = document.getElementById("templates-grid");
@@ -283,7 +309,8 @@
         geral: '<span class="badge badge-geral">🏢 Geral</span>',
         advocacia: '<span class="badge badge-advocacia">⚖️ Advocacia</span>',
         eventos: '<span class="badge badge-eventos">🎉 Eventos</span>',
-        medico: '<span class="badge badge-medico">🏥 Médico</span>'
+        medico: '<span class="badge badge-medico">🏥 Médico</span>',
+        restaurante: '<span class="badge badge-restaurante">🍽️ Restaurante</span>',
       };
       return badges[nicho] || '';
     }
@@ -306,7 +333,18 @@
       13: { banner: "https://placehold.co/600x400?text=Eventos+Festas", descricao: "Planejamento completo de festas e celebrações" },
       14: { banner: "https://placehold.co/600x400?text=Corporativo", descricao: "Eventos corporativos e convenções" },
       15: { banner: "https://placehold.co/600x400?text=Clinica+Saude", descricao: "Clínica multiespecializada completa" },
-      16: { banner: "https://placehold.co/600x400?text=Startup+Hero", descricao: "Centro médico com telemedicina integrada" }
+      16: { banner: "https://placehold.co/600x400?text=Startup+Hero", descricao: "Centro médico com telemedicina integrada" },
+      17: {
+        banner: "https://placehold.co/600x400?text=Sabor+%26+Arte+Restaurante",
+        descricao: "Restaurante elegante com cardápio dinâmico e reservas online"
+      },
+      18: {
+        banner: "https://placehold.co/600x400?text=Bistro+Gourmet",
+        descricao: "Bistrô moderno com sistema de pedidos e eventos especiais"
+      },  
+      19: { banner: "https://placehold.co/600x400?text=Justiça+Advocacia", descricao: "Escritório tradicional com áreas de atuação detalhadas" }, 
+      20: { banner: "https://placehold.co/600x400?text=Institucional+MultiPaginas", descricao: "Site institucional com múltiplas páginas e navegação aprimorada" },
+
     };
 
     // Função para renderizar templates

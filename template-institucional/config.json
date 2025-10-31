@@ -1,0 +1,199 @@
+{
+  "template": {
+    "name": "Template Institucional",
+    "version": "1.0.0",
+    "description": "Template HTML responsivo para site institucional",
+    "author": "Sua Empresa",
+    "pages": ["home", "sobre", "servicos", "contato"]
+  },
+  "site": {
+    "title": "Nome da Empresa",
+    "tagline": "Slogan da sua empresa",
+    "description": "Descrição da empresa para SEO",
+    "keywords": "empresa, serviços, soluções, negócios",
+    "email": "contato@empresa.com.br",
+    "phone": "(00) 0000-0000",
+    "whatsapp": "5500000000000",
+    "address": {
+      "street": "Rua Exemplo, 123",
+      "city": "Cidade",
+      "state": "Estado",
+      "zip": "00000-000"
+    },
+    "social": {
+      "facebook": "https://facebook.com/empresa",
+      "instagram": "https://instagram.com/empresa",
+      "linkedin": "https://linkedin.com/company/empresa",
+      "youtube": "https://youtube.com/empresa"
+    }
+  },
+  "navigation": [
+    {
+      "label": "Home",
+      "url": "index.html",
+      "active": true
+    },
+    {
+      "label": "Sobre",
+      "url": "sobre.html",
+      "active": false
+    },
+    {
+      "label": "Serviços",
+      "url": "servicos.html",
+      "active": false
+    },
+    {
+      "label": "Contato",
+      "url": "contato.html",
+      "active": false
+    }
+  ],
+  "home": {
+    "hero": {
+      "title": "Transforme Seu Negócio",
+      "subtitle": "Soluções inovadoras para empresas que querem crescer",
+      "cta_text": "Fale Conosco",
+      "cta_url": "contato.html"
+    },
+    "features": [
+      {
+        "icon": "✓",
+        "title": "Qualidade",
+        "description": "Comprometimento com a excelência em cada projeto"
+      },
+      {
+        "icon": "⚡",
+        "title": "Agilidade",
+        "description": "Processos otimizados para entregas rápidas"
+      },
+      {
+        "icon": "🎯",
+        "title": "Resultados",
+        "description": "Foco em gerar valor para o seu negócio"
+      }
+    ],
+    "stats": [
+      {
+        "number": "10+",
+        "label": "Anos de Experiência"
+      },
+      {
+        "number": "500+",
+        "label": "Projetos Entregues"
+      },
+      {
+        "number": "200+",
+        "label": "Clientes Satisfeitos"
+      },
+      {
+        "number": "98%",
+        "label": "Taxa de Satisfação"
+      }
+    ]
+  },
+  "about": {
+    "title": "Sobre Nós",
+    "subtitle": "Conheça nossa história e valores",
+    "content": "Somos uma empresa comprometida com a excelência e inovação. Nossa missão é proporcionar soluções de alta qualidade que impulsionem o crescimento dos nossos clientes.",
+    "mission": "Entregar soluções inovadoras que transformem negócios e gerem resultados extraordinários.",
+    "vision": "Ser referência em excelência e inovação no mercado nacional.",
+    "values": [
+      "Integridade",
+      "Excelência",
+      "Inovação",
+      "Compromisso",
+      "Respeito"
+    ]
+  },
+  "services": {
+    "title": "Nossos Serviços",
+    "subtitle": "Soluções completas para o seu negócio",
+    "items": [
+      {
+        "title": "Consultoria Empresarial",
+        "description": "Análise estratégica e planejamento para otimizar seus processos e aumentar resultados.",
+        "icon": "📊"
+      },
+      {
+        "title": "Desenvolvimento de Software",
+        "description": "Soluções personalizadas em Laravel, Livewire e Filament para sua empresa.",
+        "icon": "💻"
+      },
+      {
+        "title": "Marketing Digital",
+        "description": "Estratégias completas para aumentar sua presença online e conquistar mais clientes.",
+        "icon": "📱"
+      },
+      {
+        "title": "Gestão de Projetos",
+        "description": "Coordenação eficiente de projetos com metodologias ágeis e foco em resultados.",
+        "icon": "🎯"
+      },
+      {
+        "title": "Treinamento",
+        "description": "Capacitação da sua equipe com cursos e workshops especializados.",
+        "icon": "📚"
+      },
+      {
+        "title": "Suporte Técnico",
+        "description": "Atendimento especializado e suporte contínuo para garantir o sucesso do seu negócio.",
+        "icon": "🛠️"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Entre em Contato",
+    "subtitle": "Estamos prontos para ajudar você",
+    "form_fields": [
+      {
+        "name": "name",
+        "label": "Nome Completo",
+        "type": "text",
+        "required": true,
+        "placeholder": "Seu nome"
+      },
+      {
+        "name": "email",
+        "label": "E-mail",
+        "type": "email",
+        "required": true,
+        "placeholder": "seu@email.com"
+      },
+      {
+        "name": "phone",
+        "label": "Telefone",
+        "type": "tel",
+        "required": false,
+        "placeholder": "(00) 00000-0000"
+      },
+      {
+        "name": "subject",
+        "label": "Assunto",
+        "type": "text",
+        "required": true,
+        "placeholder": "Como podemos ajudar?"
+      },
+      {
+        "name": "message",
+        "label": "Mensagem",
+        "type": "textarea",
+        "required": true,
+        "placeholder": "Descreva sua necessidade..."
+      }
+    ]
+  },
+  "footer": {
+    "copyright": "© 2025 Nome da Empresa. Todos os direitos reservados.",
+    "links": [
+      {
+        "label": "Política de Privacidade",
+        "url": "#"
+      },
+      {
+        "label": "Termos de Uso",
+        "url": "#"
+      }
+    ]
+  }
+}
