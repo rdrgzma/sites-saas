@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Galeria de Templates - MVP</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <style>
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: linear-gradient(to bottom right, #f9fafb, #eef2ff);
+      color: #111827;
+      transition: background 0.3s, color 0.3s;
+    }
+    @media (prefers-color-scheme: dark) {
+      body {
+        background: linear-gradient(to bottom right, #0f172a, #1e1b4b);
+        color: #f1f5f9;
+      }
+    }
+
+    .template-card {
+      transition: all 0.35s ease;
+      cursor: pointer;
+      background: rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+    }
+    .template-card:hover {
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+    }
+
+    .modal-bg {
+      background: rgba(0, 0, 0, 0.85);
+      position: fixed;
+      inset: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 100;
+      animation: fadeIn 0.3s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .modal-content {
+      background: #fff;
+      width: 96%;
+      height: 90%;
+      max-width: 1400px;
+      border-radius: 14px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      animation: scaleIn 0.3s ease;
+    }
+    @keyframes scaleIn {
+      from { transform: scale(0.95); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+    iframe {
+      flex-grow: 1;
+      width: 100%;
+      border: none;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+  <!-- HEADER -->
+  <header class="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white py-10 shadow-lg">
+    <div class="max-w-6xl mx-auto text-center px-4">
+      <h1 class="text-3xl md:text-5xl font-extrabold mb-2 tracking-tight">✨ Galeria de Templates MVP</h1>
+      <p class="text-indigo-100 text-lg">10 estilos prontos — dinâmicos, modernos e responsivos</p>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="flex-grow py-12">
+    <div class="max-w-7xl mx-auto grid gap-10 sm:grid-cols-2 lg:grid-cols-3 px-6" id="templates-grid">
+      <!-- Cards gerados via JS -->
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-100/70 border-t mt-12 backdrop-blur-md dark:bg-gray-900/40">
+    <div class="max-w-7xl mx-auto py-6 px-4 text-center text-gray-600 dark:text-gray-400 text-sm">
+      © 2025 <strong>MVP Templates</strong> — desenvolvido com 💜 usando 
+      <span class="font-medium text-indigo-600 dark:text-indigo-400">Laravel + Tailwind + JSON</span>
+    </div>
+  </footer>
+
+  <!-- MODAL PREVIEW -->
+  <div id="modal" class="modal-bg">
+    <div class="modal-content">
+      <div class="flex justify-between items-center bg-indigo-600/90 text-white px-4 py-3 backdrop-blur">
+        <h3 id="modal-titulo" class="font-semibold text-lg"></h3>
+        <button id="modal-fechar" class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded">Fechar ✕</button>
+      </div>
+      <iframe id="iframe-demo"></iframe>
+    </div>
+  </div>
+
+  <script>
+    const templates = [
+      { id: 1, nome: "Modern Clean", arquivo: "template_site_1.html", json: "dados-site-template1.json" },
+      { id: 2, nome: "Minimal Dark", arquivo: "template_site_2.html", json: "dados-site-template2.json" },
+      { id: 3, nome: "NeoTech Digital", arquivo: "template_site_3.html", json: "dados-site-template3.json" },
+      { id: 4, nome: "Creative Edge", arquivo: "template_site_4.html", json: "dados-site-template4.json" },
+      { id: 5, nome: "Magazine Style", arquivo: "template_site_5.html", json: "dados-site-template5.json" },
+      { id: 6, nome: "Neumorphism Suave", arquivo: "template_site_6.html", json: "dados-site-template6.json" },
+      { id: 7, nome: "Brutalist Bold", arquivo: "template_site_7.html", json: "dados-site-template7.json" },
+      { id: 8, nome: "Luxury Premium", arquivo: "template_site_8.html", json: "dados-site-template8.json" },
+      { id: 9, nome: "Magazine Editorial", arquivo: "template_site_9.html", json: "dados-site-template9.json" },
+      { id: 10, nome: "Portfolio Showcase", arquivo: "template_site_10.html", json: "dados-site-template10.json" },
+    ];
+
+    const grid = document.getElementById("templates-grid");
+
+    // monta os cards
+    templates.forEach(async (tpl) => {
+      let banner = `https://placehold.co/600x300?text=Template+${tpl.id}`;
+      let descricao = "Visual moderno e responsivo.";
+      try {
+        const resp = await fetch(tpl.json);
+        const data = await resp.json();
+        if (data.pages?.home?.banner) banner = data.pages.home.banner;
+        if (data.pages?.home?.descricao) descricao = data.pages.home.descricao;
+      } catch (e) {
+        console.warn("Erro ao carregar JSON de", tpl.nome);
+      }
+
+      const card = document.createElement("div");
+      card.className = "template-card rounded-xl overflow-hidden shadow-sm flex flex-col";
+      card.innerHTML = `
+        <div class="relative">
+          <img src="${banner}" alt="${tpl.nome}" class="w-full h-44 object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent"></div>
+          <div class="absolute bottom-3 left-3 text-white font-semibold text-lg drop-shadow">${tpl.nome}</div>
+        </div>
+        <div class="p-5 flex flex-col justify-between flex-grow">
+          <p class="text-sm text-gray-700 dark:text-gray-300 mb-4">${descricao}</p>
+          <div class="flex justify-between items-center">
+            <button class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 transition" onclick="openModal('${tpl.nome}','${tpl.arquivo}')">Ver Demo</button>
+            <a href="${tpl.arquivo}" target="_blank" class="text-indigo-600 hover:underline text-sm font-medium">Abrir nova aba ↗</a>
+          </div>
+        </div>
+      `;
+      grid.appendChild(card);
+    });
+
+    // modal preview
+    const modal = document.getElementById("modal");
+    const iframe = document.getElementById("iframe-demo");
+    const titulo = document.getElementById("modal-titulo");
+
+    function openModal(nome, arquivo) {
+      titulo.innerText = nome;
+      iframe.src = arquivo;
+      modal.style.display = "flex";
+      document.body.style.overflow = "hidden";
+    }
+
+    document.getElementById("modal-fechar").addEventListener("click", () => {
+      modal.style.display = "none";
+      iframe.src = "";
+      document.body.style.overflow = "auto";
+    });
+  </script>
+</body>
+</html>
+
