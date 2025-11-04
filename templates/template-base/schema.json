@@ -1,0 +1,246 @@
+{
+  "name": "Template Multi-Seção (Empresa)",
+  "description": "Um template de página única ideal para sites institucionais, com seções de Home, Sobre, Produtos e Contato.",
+  "category": "Negócios",
+  "version": "1.0",
+  "fields": [
+    {
+      "type": "heading",
+      "label": "Configurações Globais"
+    },
+    {
+      "name": "config_nome",
+      "label": "Nome da Empresa",
+      "type": "text",
+      "default": "Empresa Exemplo"
+    },
+    {
+      "name": "config_logo",
+      "label": "URL do Logo",
+      "type": "image_url",
+      "default": "https://placehold.co/150x50?text=Logo"
+    },
+    {
+      "name": "config_cor_primaria",
+      "label": "Cor Primária",
+      "type": "color",
+      "default": "#f97316"
+    },
+    {
+      "name": "config_cor_secundaria",
+      "label": "Cor Secundária",
+      "type": "color",
+      "default": "#dc2626"
+    },
+    {
+      "name": "config_cor_fundo",
+      "label": "Cor de Fundo",
+      "type": "color",
+      "default": "#f3f4f6"
+    },
+    {
+      "type": "heading",
+      "label": "Seção: Home (Topo)"
+    },
+    {
+      "name": "home_titulo",
+      "label": "Título Principal",
+      "type": "text",
+      "default": "Bem-vindo à Empresa Exemplo"
+    },
+    {
+      "name": "home_descricao",
+      "label": "Descrição Principal",
+      "type": "textarea",
+      "default": "Soluções completas em tecnologia e inovação para o seu negócio."
+    },
+    {
+      "name": "home_banner",
+      "label": "URL do Banner Principal",
+      "type": "image_url",
+      "default": "https://placehold.co/1200x400?text=Banner+Principal"
+    },
+    {
+      "type": "heading",
+      "label": "Seção: Quem Somos"
+    },
+    {
+      "name": "quem_somos_titulo",
+      "label": "Título da Seção 'Quem Somos'",
+      "type": "text",
+      "default": "Quem Somos"
+    },
+    {
+      "name": "quem_somos_descricao",
+      "label": "Descrição da Seção 'Quem Somos'",
+      "type": "textarea",
+      "default": "Somos uma empresa dedicada a entregar excelência em tecnologia e atendimento personalizado."
+    },
+    {
+      "type": "heading",
+      "label": "Equipe (Máx. 3 Membros)"
+    },
+    {
+      "name": "equipe_1_nome",
+      "label": "Membro 1: Nome",
+      "type": "text",
+      "default": "Maria Silva"
+    },
+    {
+      "name": "equipe_1_cargo",
+      "label": "Membro 1: Cargo",
+      "type": "text",
+      "default": "CEO"
+    },
+    {
+      "name": "equipe_1_foto",
+      "label": "Membro 1: URL da Foto",
+      "type": "image_url",
+      "default": "https://placehold.co/150?text=Maria"
+    },
+    {
+      "name": "equipe_2_nome",
+      "label": "Membro 2: Nome",
+      "type": "text",
+      "default": "João Pereira"
+    },
+    {
+      "name": "equipe_2_cargo",
+      "label": "Membro 2: Cargo",
+      "type": "text",
+      "default": "CTO"
+    },
+    {
+      "name": "equipe_2_foto",
+      "label": "Membro 2: URL da Foto",
+      "type": "image_url",
+      "default": "https://placehold.co/150?text=Joao"
+    },
+    {
+      "name": "equipe_3_nome",
+      "label": "Membro 3: Nome",
+      "type": "text",
+      "default": "Ana Costa"
+    },
+    {
+      "name": "equipe_3_cargo",
+      "label": "Membro 3: Cargo",
+      "type": "text",
+      "default": "Gerente de Projetos"
+    },
+    {
+      "name": "equipe_3_foto",
+      "label": "Membro 3: URL da Foto",
+      "type": "image_url",
+      "default": "https://placehold.co/150?text=Ana"
+    },
+    {
+      "type": "heading",
+      "label": "Seção: Produtos"
+    },
+    {
+      "name": "produtos_titulo",
+      "label": "Título da Seção 'Produtos'",
+      "type": "text",
+      "default": "Produtos e Serviços"
+    },
+    {
+      "name": "produtos_descricao",
+      "label": "Descrição da Seção 'Produtos'",
+      "type": "textarea",
+      "default": "Conheça nossa linha de produtos e serviços para potencializar seus resultados."
+    },
+    {
+      "type": "heading",
+      "label": "Itens de Produto (Máx. 3 Itens)"
+    },
+    {
+      "name": "produto_1_nome",
+      "label": "Produto 1: Nome",
+      "type": "text",
+      "default": "Consultoria Tech"
+    },
+    {
+      "name": "produto_1_descricao",
+      "label": "Produto 1: Descrição",
+      "type": "text",
+      "default": "Consultoria especializada em transformação digital e inovação."
+    },
+    {
+      "name": "produto_1_imagem",
+      "label": "Produto 1: URL da Imagem",
+      "type": "image_url",
+      "default": "https://placehold.co/300x200?text=Consultoria"
+    },
+    {
+      "name": "produto_1_preco",
+      "label": "Produto 1: Preço (ex: 499,90)",
+      "type": "text",
+      "default": "499.90"
+    },
+    {
+      "name": "produto_2_nome",
+      "label": "Produto 2: Nome",
+      "type": "text",
+      "default": "Desenvolvimento Web"
+    },
+    {
+      "name": "produto_2_descricao",
+      "label": "Produto 2: Descrição",
+      "type": "text",
+      "default": "Sites e sistemas sob medida para empresas de todos os portes."
+    },
+    {
+      "name":G "produto_2_imagem",
+      "label": "Produto 2: URL da Imagem",
+      "type": "image_url",
+      "default": "https://placehold.co/300x200?text=Web"
+    },
+    {
+      "name": "produto_2_preco",
+      "label": "Produto 2: Preço",
+      "type": "text",
+      "default": "999.90"
+    },
+    {
+      "name": "produto_3_nome",
+      "label": "Produto 3: Nome",
+      "type": "text",
+      "default": "Suporte Técnico"
+    },
+    {
+      "name": "produto_3_descricao",
+      "label": "Produto 3: Descrição",
+      "type": "text",
+      "default": "Planos de suporte e manutenção preventiva com SLA garantido."
+    },
+    {
+      "name": "produto_3_imagem",
+      "label": "Produto 3: URL da Imagem",
+      "type": "image_url",
+      "default": "https://placehold.co/300x200?text=Suporte"
+    },
+    {
+      "name": "produto_3_preco",
+      "label": "Produto 3: Preço",
+      "type": "text",
+      "default": "199.90"
+    },
+    {
+      "type": "heading",
+      "label": "Seção: Contato"
+    },
+    {
+      "name": "contato_titulo",
+      "label": "Título da Seção 'Contato'",
+      "type": "text",
+      "default": "Fale Conosco"
+    },
+    {
+      "name": "contato_descricao",
+      "label": "Descrição da Seção 'Contato'",
+      "type": "textarea",
+      "default": "Entre em contato para solicitar um orçamento ou tirar suas dúvidas."
+    }
+  ]
+}

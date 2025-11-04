@@ -1,0 +1,11 @@
+{
+  "version": "1.0.1",
+  "templates": [
+    {
+      "id": "template-base",
+      "path": "/templates/template-base",
+      "status": "ativo",
+      "added_date": "2025-11-04"
+    }
+  ]
+}
