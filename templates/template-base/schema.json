@@ -191,7 +191,7 @@
       "default": "Sites e sistemas sob medida para empresas de todos os portes."
     },
     {
-      "name":G "produto_2_imagem",
+      "name":"produto_2_imagem",
       "label": "Produto 2: URL da Imagem",
       "type": "image_url",
       "default": "https://placehold.co/300x200?text=Web"
